@@ -38,7 +38,6 @@ public class Expense {
         return
                 "Expense { " +
                 "name='" + name + '\'' +
-                ", members=" + members +
                 ", total=" + total +
                 ", splitAmount=" + splitAmount +
                 '}';
