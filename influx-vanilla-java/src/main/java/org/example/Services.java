@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
 public class Services {
@@ -65,12 +66,32 @@ public class Services {
         List<GroupMember> members = expenseMemberList(group, memberName);
         Expense expense = new Expense(name, members, total);
         addExpenseToAllMembers(members, expense);
+        updateAllMemberTotals(members);
+        group.setExpenseList(expense);
         return expense;
+    }
+
+    public static void updateMemberOwedTotal (GroupMember member) {
+        List<Expense> expenses = member.getExpenses();
+        int total = 0;
+        for (Expense expense : expenses) {
+            total += expense.getSplitAmount();
+        }
+        member.setTotalOwed(total);
+    }
+    public static void updateAllMemberTotals (List<GroupMember> members) {
+        for (GroupMember member : members) {
+            updateMemberOwedTotal(member);
+        }
     }
 
 // ToDo: Create a function to show the expenses split across the members
 //- use console.log to show the final output
 //    - The output should clearly indicate who owes what amount to whom.
 
+    public static void memberTotals (TripGroup group) {
+        List<GroupMember> members = group.getMembers();
+
+    }
 
 } // Services Class

@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.reflect.Member;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,9 +16,15 @@ public class Main {
         Services.addMember("Hannah", testGroup);
 
         Expense newExpense =  Services.addExpense("Parasailing", 400, testGroup, "Tina", "Andy", "Hannah", "Jim");
+        Expense expense2 =  Services.addExpense("Parasailing", 150, testGroup, "Tina", "Andy", "Hannah");
 
         System.out.println(newExpense);
         System.out.println(newExpense.getMembers());
+
+        GroupMember testMember = Services.getMember("Tina", testGroup);
+        Services.updateMemberOwedTotal(testMember);
+        System.out.println(testMember);
+        System.out.println(testGroup);
 
 
 // ToDo: Create a main function to do the following

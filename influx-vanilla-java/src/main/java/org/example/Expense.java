@@ -36,10 +36,10 @@ public class Expense {
     @Override
     public String toString() {
         return
-                "Expense { " +
-                "name='" + name + '\'' +
-                ", total=" + total +
-                ", splitAmount=" + splitAmount +
-                '}';
+                " \n Expense { " +
+                "name: " + name +
+                ", total: " + total +
+                ", splitAmount: " + splitAmount +
+                " } ";
     }
 } // Expense Class
