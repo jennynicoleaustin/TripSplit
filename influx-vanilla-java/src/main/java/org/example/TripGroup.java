@@ -23,11 +23,10 @@ public class TripGroup {
         members.add(member);
     }
 
-
     @Override
     public String toString() {
         return "TripGroup{" +
-                ", groupName='" + groupName + '\'' +
+                "groupName='" + groupName + '\'' +
                 ", members=" + members +
                 '}';
     }

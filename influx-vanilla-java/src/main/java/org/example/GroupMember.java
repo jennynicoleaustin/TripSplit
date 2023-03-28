@@ -28,14 +28,11 @@ public class GroupMember  {
         return totalOwed;
     }
 
-    public void findMember() {
-
-    }
 
     @Override
     public String toString() {
         return "GroupMember{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", expenses=" + expenses +
                 ", totalOwed=" + totalOwed +
                 '}';

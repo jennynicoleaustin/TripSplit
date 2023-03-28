@@ -17,10 +17,27 @@ public class Expense {
         this.splitAmount = total / members.size();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<GroupMember> getMembers() {
+        return members;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public int getSplitAmount() {
+        return splitAmount;
+    }
+
     @Override
     public String toString() {
-        return "Expense{" +
-                ", name='" + name + '\'' +
+        return
+                "Expense { " +
+                "name='" + name + '\'' +
                 ", members=" + members +
                 ", total=" + total +
                 ", splitAmount=" + splitAmount +
