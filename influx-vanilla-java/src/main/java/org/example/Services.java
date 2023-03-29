@@ -88,8 +88,6 @@ public class Services {
 
 
     // 4. Create a function to show the expenses split across the members
-    public static void memberTotals(TripGroup group) {
-        List<GroupMember> members = group.getMembers();
-    }
+
 
 } // Services Class

@@ -10,7 +10,6 @@ public class Expense {
     private int total;
     private int splitAmount;
 
-    // TODO: How to tell Java to except members as strings...
     public Expense(String name, List<GroupMember> members, int total) {
         this.name = name;
         this.members = members;
