@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Expense {
@@ -9,7 +10,7 @@ public class Expense {
     private int total;
     private int splitAmount;
 
-// TODO: How to tell Java to except members as strings...
+    // TODO: How to tell Java to except members as strings...
     public Expense(String name, List<GroupMember> members, int total) {
         this.name = name;
         this.members = members;
@@ -33,13 +34,22 @@ public class Expense {
         return splitAmount;
     }
 
+    public List<String> memberNamesToString (List<GroupMember> members) {
+        List<String> names = new ArrayList<>();
+        for (GroupMember member : members) {
+            names.add(member.getName());
+        }
+        return names;
+    }
+
     @Override
     public String toString() {
         return
-                " \n Expense { " +
-                "name: " + name +
-                ", total: " + total +
-                ", splitAmount: " + splitAmount +
-                " } ";
+                " \n Expense { \n " +
+                        "name: " + name +
+                        ", \n total: " + total +
+                        ", \n splitAmount: " + splitAmount +
+                        ", \n members: " + memberNamesToString(members) +
+                        " } ";
     }
 } // Expense Class

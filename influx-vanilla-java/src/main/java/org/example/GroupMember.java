@@ -33,20 +33,11 @@ public class GroupMember {
         this.totalOwed = totalOwed;
     }
 
-//    @Override
-//    public String toString() {
-//        return "GroupMember{" +
-//                "name='" + name + '\'' +
-//                ", expenses=" + expenses +
-//                ", totalOwed=" + totalOwed +
-//                '}';
-//    }
-
 
     @Override
     public String toString() {
-        return "GroupMember { \n name: " + name +
+        return "\n GroupMember { \n name: " + name +
                 ",\n expenses: " + expenses +
-                ",\n totalOwed: " + totalOwed + " } \n";
+                ",\n totalOwed: " + totalOwed + " }";
     }
 } // GroupMember class

@@ -20,15 +20,21 @@ public class Services {
     }
 
 // Create a function to Add a member to the Trip group
-    public static void addMember(String name, TripGroup group) {
+    public static void addMember(TripGroup group, String name) {
 //        Create member
         GroupMember newMember = new GroupMember(name);
 //        Add new member to that particular Trip Group's member List
         getMembersList(group).add(newMember);
-//        System.out.println(group);
     }
 
-//    ToDo: Create a function to add expenses.
+    public static void addMembers(TripGroup group, String ... nameToAdd) {
+        for (String name : nameToAdd) {
+            addMember(group, name);
+        }
+    }
+
+
+//    Create a function to add expenses.
 //  - Expenses should always be added against a member
 //  - Can be called multiple times with different or same expense amounts and for different or same members
 //        - this suggests that each expense is added against members (plural!) meaning every time you add an expense you should indicate which members of the group are splitting this expense
