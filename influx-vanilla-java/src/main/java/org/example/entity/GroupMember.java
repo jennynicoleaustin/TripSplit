@@ -1,9 +1,9 @@
-package org.example;
+package org.example.entity;
 
-import java.lang.reflect.Array;
+import org.example.entity.Expense;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class GroupMember {
 

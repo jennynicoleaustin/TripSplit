@@ -1,4 +1,7 @@
-package org.example;
+package org.example.entity;
+import org.example.entity.Expense;
+import org.example.entity.GroupMember;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +40,7 @@ public class TripGroup {
 
     @Override
     public String toString() {
-        return "TripGroup { \n" +
+        return "\n TripGroup { \n" +
                 " groupName: " + groupName +
                 ", \n members: " + memberNamesToString(members) +
                 ", \n expenses: " + expenseList +
