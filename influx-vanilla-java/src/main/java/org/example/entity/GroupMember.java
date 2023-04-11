@@ -14,7 +14,7 @@ public class GroupMember {
     //    TODO: calculated total amount due, based off their expenses.
     public GroupMember(String name) {
         this.name = name;
-        this.expenses = new ArrayList<>();
+        this.expenses = new ArrayList<>(); //  TODO don't initialize in the constructor
     }
 
     public String getName() {

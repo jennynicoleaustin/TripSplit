@@ -12,12 +12,11 @@ public class Services {
     // 1. Create a function to create a Trip Group.
     public static TripGroup createGroup(String groupName) {
         TripGroup newGroup = new TripGroup(groupName);
-// TODO: - write the data to json (Every time or only at the end?)
         System.out.println(newGroup);
         return newGroup;
     }
 
-    //    TODO: Create a function that accepts any type to return any list of members
+// TODO: Create a function that accepts any type to return any list of members
     // create helper function for slightly less cluttered code
     public static List<GroupMember> getMembersList(TripGroup group) {
         return group.getMembers();
@@ -88,8 +87,6 @@ public class Services {
         group.setExpenseList(expense);
         return expense;
     }
-
-
 
     // 4. Create a function to show the expenses split across the members
 
