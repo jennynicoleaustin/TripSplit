@@ -9,6 +9,7 @@ public class Expense {
     private List<GroupMember> members;
     private int total;
     private int splitAmount;
+    private GroupMember paidBy;
 
     public Expense(String name, List<GroupMember> members, int total) {
         this.name = name;
