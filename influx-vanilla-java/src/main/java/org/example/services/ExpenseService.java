@@ -36,8 +36,9 @@ public class ExpenseService {
 
     // 3. Create a function to add expenses.
     // -> Creates a list of all members to be added to new expense, creates new expense, adds the expense against all members, update all members total owed amount, attaches expense to the TripGroup
-    public static Expense addExpense(String name, int total, TripGroup group, GroupMember paidBy, String... memberName) {
+    public static Expense addExpense(String name, int total, TripGroup group, String paidByName, String... memberName) {
         List<GroupMember> members = expenseMemberList(group, memberName);
+        GroupMember paidBy = GroupMemberService.getMember(paidByName, group);
         Expense expense = new Expense(name, members, total, paidBy);
         addExpenseToAllMembers(members, expense);
         updateAllMemberTotals(members);

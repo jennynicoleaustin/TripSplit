@@ -21,6 +21,7 @@ public class TripGroupService {
     }
 
     // 2. Create a function to Add a member to the Trip group
+//    Instantiate a new member list on its first use.
     public static void addMember(TripGroup group, String name) {
         GroupMember newMember = new GroupMember(name);
         getMembersList(group).add(newMember);

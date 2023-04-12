@@ -57,6 +57,7 @@ public class Expense {
                 " \n Expense { \n " +
                         "name: " + name +
                         ", \n total: " + total +
+                        ", \n paidBy: " + paidBy.getName() +
                         ", \n splitAmount: " + splitAmount +
                         ", \n members: " + memberNamesToString(members) +
                         " } ";
