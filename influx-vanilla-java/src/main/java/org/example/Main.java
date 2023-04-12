@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.entity.Expense;
 import org.example.entity.TripGroup;
+import org.example.services.Services;
 
 public class Main {
     public static void main(String[] args) {
