@@ -1,4 +1,4 @@
-package entity;
+package com.example.tripsplit.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,14 +9,14 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "group_members")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class GroupMember {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
@@ -25,7 +25,11 @@ public class GroupMember {
     @Column
     private int totalOwed;
 
-    @OneToMany(mappedBy = "groupMember")
+    @ManyToOne
+    @JoinColumn(name = "trip_group_id", referencedColumnName = "id")
+    private TripGroup tripGroup;
+
+    @OneToMany(mappedBy = "GroupMember")
     private List<Expense> expenses;
 
 } // GroupMember Class

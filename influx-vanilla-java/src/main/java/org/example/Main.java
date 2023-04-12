@@ -18,7 +18,7 @@ public class Main {
         //  calls the function to add $30 as an expense for each of the members
         Expense expense30 = Services.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty");
 
-// ToDO: add more expenses for "different amounts, same amounts, same members, diff members, different group.
+// ToDO: add more expenses for different amounts, same amounts, same members, diff members, different group.
 
 //        TODO: --- what happens when you do something you shouldn't is null in the expense name or members, catch exceptions/ handle exceptions
 
