@@ -11,9 +11,18 @@ public class Expense {
     private int splitAmount;
     private GroupMember paidBy;
 
-    public Expense(String name, List<GroupMember> members, int total) {
+    public GroupMember getPaidBy() {
+        return paidBy;
+    }
+
+    public void setPaidBy(GroupMember paidBy) {
+        this.paidBy = paidBy;
+    }
+
+    public Expense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
         this.name = name;
         this.members = members;
+        this.paidBy = paidBy;
         this.total = total;
         this.splitAmount = total / members.size();
     }

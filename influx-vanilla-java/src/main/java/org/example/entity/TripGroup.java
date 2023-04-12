@@ -11,8 +11,8 @@ public class TripGroup {
     public TripGroup(String groupName) {
         this.groupName = groupName;
 //        TODO Do not need to initialize in the constructor, but rather the first time you use the list.
-        this.members = new ArrayList<>();
-        this.expenseList = new ArrayList<>();
+//        this.members = new ArrayList<>();
+//        this.expenseList = new ArrayList<>();
     }
 
     public List<GroupMember> getMembers() {
