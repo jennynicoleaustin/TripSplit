@@ -25,6 +25,10 @@ public class TripGroup {
         members.add(member);
     }
 
+    public List<Expense> getExpenseList() {
+        return expenseList;
+    }
+
     public void setExpenseList (Expense expense) {
         expenseList.add(expense);
     }

@@ -22,7 +22,7 @@ public class GroupMemberService {
     public static GroupMember getMemberByPhone(UUID memberId, TripGroup group) {
         GroupMember member = null;
         for (GroupMember a : TripGroupService.getMembersList(group)) {
-            if (memberId.equals(a.getPhone())) {
+            if (memberId.equals(a.getId())) {
                 member = a;
                 break;
             }

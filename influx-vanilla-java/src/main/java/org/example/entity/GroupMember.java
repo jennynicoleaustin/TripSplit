@@ -1,28 +1,28 @@
 package org.example.entity;
+
 import java.util.*;
 
 public class GroupMember {
 
-    private String phone;
+    private UUID id;
     private String name;
     private List<Expense> expenses;
-    private Integer totalOwed;
-    private Map<UUID, Map<UUID, Integer>> balanceSheet;
+//    private Integer totalOwed;
+    private Map<UUID, Integer> balanceSheet;
 
-    public Map<UUID, Map<UUID, Integer>> getBalanceSheet() {
+    public Map<UUID, Integer> getBalanceSheet() {
         return balanceSheet;
     }
 
 
-
-    public GroupMember(String name, String phone) {
+    public GroupMember(String name) {
         this.name = name;
-        this.phone = phone;
+        this.id = UUID.randomUUID();
         this.expenses = new ArrayList<>();
         this.balanceSheet = new HashMap<>();
     }
 
-    public void setBalanceSheet(Map<UUID, Map<UUID, Integer>> balanceSheet) {
+    public void setBalanceSheet(Map<UUID, Integer> balanceSheet) {
         this.balanceSheet = balanceSheet;
     }
 
@@ -34,27 +34,27 @@ public class GroupMember {
         return expenses;
     }
 
-    public int getTotalOwed() {
-        return totalOwed;
+//    public int getTotalOwed() {
+//        return totalOwed;
+//    }
+//
+//    public void setTotalOwed(int totalOwed) {
+//        this.totalOwed = totalOwed;
+//    }
+
+    public UUID getId() {
+        return id;
     }
 
-    public void setTotalOwed(int totalOwed) {
-        this.totalOwed = totalOwed;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "\n GroupMember { \n name: " + name +
-                ",\n expenses: " + expenses +
-                ",\n totalOwed: " + totalOwed + " }";
+                ",\n expenses: " + expenses + " }";
+//                ",\n totalOwed: " + totalOwed +
     }
 
 } // GroupMember class
