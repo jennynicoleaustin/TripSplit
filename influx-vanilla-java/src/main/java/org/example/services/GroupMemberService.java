@@ -8,6 +8,9 @@ import java.util.UUID;
 
 public class GroupMemberService {
 
+    public static GroupMember createMember (String name, String phoneNumber) {
+        return new GroupMember(name, phoneNumber);
+    }
     public static GroupMember getMemberByName(String memberName, TripGroup group) {
         GroupMember member = null;
         for (GroupMember a : TripGroupService.getMembersList(group)) {

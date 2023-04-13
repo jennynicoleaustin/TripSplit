@@ -13,7 +13,7 @@ public class Main {
         TripGroup jenny = TripGroupService.createGroup("Jenny Austin");
 
         //  Calls the function to add 3 members
-        TripGroupService.addMembers(jenny, "Tina", "Jim", "Misty", "jenny");
+//        TripGroupService.addMembers(jenny, "Tina", "Jim", "Misty", "jenny");
         // Print trip group to show added members
         System.out.println(jenny);
 
