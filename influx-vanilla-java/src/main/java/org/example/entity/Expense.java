@@ -2,15 +2,27 @@ package org.example.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Expense {
 
     private String name;
+    private UUID id;
     private List<GroupMember> members;
     private int total;
     private int splitAmount;
     private GroupMember paidBy;
 
+
+
+    public Expense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
+        this.name = name;
+        this.id = UUID.randomUUID();
+        this.members = members;
+        this.paidBy = paidBy;
+        this.total = total;
+        this.splitAmount = total / members.size();
+    }
     public GroupMember getPaidBy() {
         return paidBy;
     }
@@ -18,15 +30,6 @@ public class Expense {
     public void setPaidBy(GroupMember paidBy) {
         this.paidBy = paidBy;
     }
-
-    public Expense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
-        this.name = name;
-        this.members = members;
-        this.paidBy = paidBy;
-        this.total = total;
-        this.splitAmount = total / members.size();
-    }
-
     public String getName() {
         return name;
     }

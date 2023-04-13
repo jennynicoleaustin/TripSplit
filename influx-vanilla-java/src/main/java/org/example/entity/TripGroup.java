@@ -1,15 +1,18 @@
 package org.example.entity;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class TripGroup {
 
     private String groupName;
+    private UUID id;
     private List<GroupMember> members;
     private List<Expense> expenseList;
 
     public TripGroup(String groupName) {
         this.groupName = groupName;
+        this.id = UUID.randomUUID();
         this.members = new ArrayList<>();
         this.expenseList = new ArrayList<>();
     }
