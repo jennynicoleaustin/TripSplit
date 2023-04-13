@@ -1,19 +1,29 @@
 package org.example.entity;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class GroupMember {
 
     private UUID id;
     private String name;
     private List<Expense> expenses;
-    private int totalOwed;
+    private Integer totalOwed;
+    private Map<UUID, Map<UUID, Integer>> balanceSheet;
+
+    public Map<UUID, Map<UUID, Integer>> getBalanceSheet() {
+        return balanceSheet;
+    }
+
+
 
     public GroupMember(String name) {
         this.name = name;
         this.id = UUID.randomUUID();
         this.expenses = new ArrayList<>();
+        this.balanceSheet = new HashMap<>();
+    }
+
+    public void setBalanceSheet(Map<UUID, Map<UUID, Integer>> balanceSheet) {
+        this.balanceSheet = balanceSheet;
     }
 
     public String getName() {

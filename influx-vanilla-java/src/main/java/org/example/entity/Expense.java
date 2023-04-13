@@ -9,8 +9,8 @@ public class Expense {
     private String name;
     private UUID id;
     private List<GroupMember> members;
-    private int total;
-    private int splitAmount;
+    private Integer total;
+    private Integer splitAmount;
     private GroupMember paidBy;
 
 
