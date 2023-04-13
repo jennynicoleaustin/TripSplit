@@ -13,6 +13,7 @@ public class TripGroupService {
         System.out.println(newGroup);
         return newGroup;
     }
+//    get TripGroup Member List
     public static List<GroupMember> getMembersList(TripGroup group) {
         return group.getMembers();
     }

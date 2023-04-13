@@ -39,4 +39,8 @@ public class GroupMember {
                 ",\n expenses: " + expenses +
                 ",\n totalOwed: " + totalOwed + " }";
     }
+
+    public UUID getId() {
+        return id;
+    }
 } // GroupMember class
