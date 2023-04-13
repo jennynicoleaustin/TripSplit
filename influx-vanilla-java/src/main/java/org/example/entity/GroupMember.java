@@ -11,10 +11,9 @@ public class GroupMember {
     private List<Expense> expenses;
     private int totalOwed;
 
-    //    TODO: calculated total amount due, based off their expenses.
     public GroupMember(String name) {
         this.name = name;
-        this.expenses = new ArrayList<>(); //  TODO don't initialize in the constructor
+        this.expenses = new ArrayList<>();
     }
 
     public String getName() {

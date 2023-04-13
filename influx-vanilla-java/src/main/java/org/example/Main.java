@@ -22,9 +22,7 @@ public class Main {
 
         Expense expense100 = ExpenseService.addExpense("dinosaur", 100, jenny, "Jim", "Jim", "Misty", "Tina", "jenny");
 
-// ToDO: add more expenses for different amounts, same amounts, same members, diff members, different group.
 
-//        TODO: --- what happens when you do something you shouldn't is null in the expense name or members, catch exceptions/ handle exceptions
 
         // calls the split function to show the final output
         System.out.println(expense30);
@@ -33,8 +31,3 @@ public class Main {
     } // Main Method
 } // Main Class
 
-// TODO Add in who paid for each expense and function to indicate who owes what.
-
-// TODO Potentially adding unit tests.
-
-// TODO SplitWise app for design ideas.

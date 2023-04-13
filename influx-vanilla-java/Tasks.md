@@ -1,3 +1,16 @@
+To Do Collection 
+
+- Add in who paid for each expense and function to indicate who owes what to whom.
+- Potentially adding unit tests.
+- SplitWise app for design ideas.
+- add more expenses for different amounts, same amounts, same members, diff members, different group. 
+- what happens when you do something you shouldn't is null in the expense name or members, catch exceptions/ handle exceptions
+- No need to initialize new lists in the constructor if you are not adding to them in the constructor
+- 
+
+
+
+
 Create a module that will help a group of people split shared expenses during a trip or vacation
 
 1. Create a function to create a Trip  Group (Only one trip group will be created for the purpose of this exercise. So, this function will only be called once). Use console.log to show the json structure of the created group. The trip group name should be Jenny Austin.

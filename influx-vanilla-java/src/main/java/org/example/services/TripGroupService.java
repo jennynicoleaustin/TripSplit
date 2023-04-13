@@ -13,15 +13,11 @@ public class TripGroupService {
         System.out.println(newGroup);
         return newGroup;
     }
-
-    // TODO: Create a function that accepts any type to return any list of members
-    // create helper function for slightly less cluttered code
     public static List<GroupMember> getMembersList(TripGroup group) {
         return group.getMembers();
     }
 
     // 2. Create a function to Add a member to the Trip group
-//    Instantiate a new member list on its first use.
     public static void addMember(TripGroup group, String name) {
         GroupMember newMember = new GroupMember(name);
         getMembersList(group).add(newMember);
