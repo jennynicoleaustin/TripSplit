@@ -3,7 +3,7 @@ import java.util.*;
 
 public class GroupMember {
 
-    private UUID id;
+    private String phone;
     private String name;
     private List<Expense> expenses;
     private Integer totalOwed;
@@ -15,9 +15,9 @@ public class GroupMember {
 
 
 
-    public GroupMember(String name) {
+    public GroupMember(String name, String phone) {
         this.name = name;
-        this.id = UUID.randomUUID();
+        this.phone = phone;
         this.expenses = new ArrayList<>();
         this.balanceSheet = new HashMap<>();
     }
@@ -42,6 +42,13 @@ public class GroupMember {
         this.totalOwed = totalOwed;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     @Override
     public String toString() {
@@ -50,7 +57,4 @@ public class GroupMember {
                 ",\n totalOwed: " + totalOwed + " }";
     }
 
-    public UUID getId() {
-        return id;
-    }
 } // GroupMember class

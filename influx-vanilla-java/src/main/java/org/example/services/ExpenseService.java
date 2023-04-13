@@ -16,7 +16,9 @@ public class ExpenseService {
         }
         return expenseMembers;
     }
-//    TODO Update this to add to balance sheet
+
+//    TODO Create functions for adding balanceSheet information for every user.
+
     // Add the expense against each member in a list
     public static void addExpenseToAllMembers(List<GroupMember> members, Expense expense) {
         for (GroupMember member : members) member.getExpenses().add(expense);

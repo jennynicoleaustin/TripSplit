@@ -19,10 +19,10 @@ public class GroupMemberService {
         return member;
     }
 
-    public static GroupMember getMemberById(UUID memberId, TripGroup group) {
+    public static GroupMember getMemberByPhone(UUID memberId, TripGroup group) {
         GroupMember member = null;
         for (GroupMember a : TripGroupService.getMembersList(group)) {
-            if (memberId.equals(a.getId())) {
+            if (memberId.equals(a.getPhone())) {
                 member = a;
                 break;
             }
