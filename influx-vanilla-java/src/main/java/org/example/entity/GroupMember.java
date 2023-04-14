@@ -53,7 +53,7 @@ public class GroupMember {
     @Override
     public String toString() {
         return "\n GroupMember { \n name: " + name +
-                ",\n expenses: " + expenses + " }";
+                ",\n id: " + id + " }";
 //                ",\n totalOwed: " + totalOwed +
     }
 

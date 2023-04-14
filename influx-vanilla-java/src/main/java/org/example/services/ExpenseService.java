@@ -21,25 +21,25 @@ public class ExpenseService {
 
 //    TODO Create functions for adding balanceSheet information for every user.
 
-    public static void updateBalanceAll(GroupMember paidByMember, Expense expense) {
+    public static void updateBalanceAll(GroupMember payerMember, Expense expense) {
         List<GroupMember> members = expense.getMembers();
-        Map<UUID, Integer> paidByBalances = paidByMember.getBalanceSheet();
-        UUID paidByMemberId = paidByMember.getId();
+        Map<UUID, Integer> payerBalances = payerMember.getBalanceSheet();
+        UUID payerId = payerMember.getId();
         Integer splitAmount = expense.getSplitAmount();
-        for (GroupMember paidTo : members) {
-            UUID paidToMemberId = paidTo.getId();
-            if (!paidToMemberId.equals(paidByMemberId)) { // Better to create a filtered list? or the if check?
-                updateBalancePayer(paidByBalances, paidToMemberId, splitAmount);
-                updateBalanceNonPayer(paidTo.getBalanceSheet(), paidToMemberId, splitAmount);
+        for (GroupMember nonPayer : members) {
+            UUID nonPayerId = nonPayer.getId();
+            if (!nonPayerId.equals(payerId)) { // Better to create a filtered list? or the if check?
+                updateBalancePayer(payerBalances, nonPayerId, splitAmount);
+                updateBalanceNonPayer(nonPayer.getBalanceSheet(), payerId, splitAmount);
             }
         }
     }
 
-    public static void updateBalancePayer (Map<UUID, Integer> paidByBalanceSheet, UUID paidToMemberId, Integer splitAmount) {
-        paidByBalanceSheet.putIfAbsent(paidToMemberId, 0); // if member is not already on the balance sheet, add & initialize
-        Integer currentAmountOwed = paidByBalanceSheet.get(paidToMemberId); // get the current balance owed
+    public static void updateBalancePayer (Map<UUID, Integer> payerBalanceSheet, UUID nonPayerId, Integer splitAmount) {
+        payerBalanceSheet.putIfAbsent(nonPayerId, 0); // if member is not already on the balance sheet, add & initialize
+        Integer currentAmountOwed = payerBalanceSheet.get(nonPayerId); // get the current balance owed
         Integer updatedAmountOwed = currentAmountOwed + splitAmount; // add the new expense split amount
-        paidByBalanceSheet.put(paidToMemberId, updatedAmountOwed); // update the balance sheet with the new amounts
+        payerBalanceSheet.put(nonPayerId, updatedAmountOwed); // update the balance sheet with the new amounts
 
     }
 

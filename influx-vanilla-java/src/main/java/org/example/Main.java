@@ -22,12 +22,13 @@ public class Main {
 //        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
 
         Expense expense100 = ExpenseService.addExpense("dinosaur", 100, jenny, "Jim", "Jim", "Misty", "Tina", "jenny");
-
+        System.out.println(expense100 + "\n");
+        System.out.println(jenny.getMembers() + "\n");
 
 
         // calls the split function to show the final output
 //        System.out.println(expense30);
-        System.out.println(expense100 + "\n");
+
 
         SplitManager.printAllBalances(jenny);
     } // Main Method

@@ -11,10 +11,12 @@ public class SplitManager {
 
     public static void printBalanceSheet(GroupMember member, TripGroup group) {
         Map<UUID, Integer> balanceSheet = member.getBalanceSheet();
+        System.out.println(member.getName());
         balanceSheet.forEach((k,v) -> {
             String balanceMemberName = GroupMemberService.getMemberById(k, group).getName();
             System.out.println(balanceMemberName + " " + v);
         });
+        System.out.println("--------\n");
     }
 
     public static void printAllBalances (TripGroup group) {
