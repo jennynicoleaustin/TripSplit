@@ -3,6 +3,7 @@ package org.example;
 import org.example.entity.Expense;
 import org.example.entity.TripGroup;
 import org.example.services.ExpenseService;
+import org.example.services.SplitManager;
 import org.example.services.TripGroupService;
 
 public class Main {
@@ -18,16 +19,17 @@ public class Main {
         System.out.println(jenny);
 
         //  calls the function to add $30 as an expense for each of the members
-        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
+//        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
 
         Expense expense100 = ExpenseService.addExpense("dinosaur", 100, jenny, "Jim", "Jim", "Misty", "Tina", "jenny");
 
 
 
         // calls the split function to show the final output
-        System.out.println(expense30);
-        System.out.println(expense100);
+//        System.out.println(expense30);
+        System.out.println(expense100 + "\n");
 
+        SplitManager.printAllBalances(jenny);
     } // Main Method
 } // Main Class
 
