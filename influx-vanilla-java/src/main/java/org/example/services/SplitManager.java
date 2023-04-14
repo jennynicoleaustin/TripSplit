@@ -9,6 +9,7 @@ import java.util.UUID;
 
 public class SplitManager {
 
+
     public static void printBalanceSheet(GroupMember member, TripGroup group) {
         Map<UUID, Integer> balanceSheet = member.getBalanceSheet();
         System.out.println(member.getName());
