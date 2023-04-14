@@ -7,22 +7,15 @@ public class GroupMember {
     private UUID id;
     private String name;
     private List<Expense> expenses;
-//    private Integer totalOwed;
-    private Map<UUID, Integer> balanceSheet;
+    private Map<UUID, Balance> balanceSheet;
 
-    public Map<UUID, Integer> getBalanceSheet() {
+
+
+    public Map<UUID, Balance> getBalanceSheet() {
         return balanceSheet;
     }
 
-
-    public GroupMember(String name) {
-        this.name = name;
-        this.id = UUID.randomUUID();
-        this.expenses = new ArrayList<>();
-        this.balanceSheet = new HashMap<>();
-    }
-
-    public void setBalanceSheet(Map<UUID, Integer> balanceSheet) {
+    public void setBalanceSheet(Map<UUID, Balance> balanceSheet) {
         this.balanceSheet = balanceSheet;
     }
 
@@ -34,13 +27,6 @@ public class GroupMember {
         return expenses;
     }
 
-//    public int getTotalOwed() {
-//        return totalOwed;
-//    }
-//
-//    public void setTotalOwed(int totalOwed) {
-//        this.totalOwed = totalOwed;
-//    }
 
     public UUID getId() {
         return id;

@@ -18,13 +18,11 @@ public class Main {
         // Print trip group to show added members
         System.out.println(jenny);
 
-        //  calls the function to add $30 as an expense for each of the members
-//        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
+//          calls the function to add $30 as an expense for each of the members
+        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
 
         Expense expense100 = ExpenseService.addExpense("dinosaur", 100, jenny, "Jim", "Jim", "Misty", "Tina", "jenny");
         System.out.println(expense100 + "\n");
-        System.out.println(jenny.getMembers() + "\n");
-
 
         // calls the split function to show the final output
 //        System.out.println(expense30);
