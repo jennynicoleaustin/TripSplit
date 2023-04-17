@@ -13,9 +13,7 @@ public class TripGroupService {
     public static TripGroup createGroup(String groupName) {
         List<GroupMember> members = new ArrayList<>();
         List<Expense> expenseList = new ArrayList<>();
-        TripGroup newGroup = new TripGroup(groupName, members, expenseList);
-        System.out.println(newGroup);
-        return newGroup;
+        return new TripGroup(groupName, members, expenseList);
     }
 
     //    get TripGroup Member List
@@ -38,7 +36,6 @@ public class TripGroupService {
             GroupMember newMember = GroupMemberService.createMember(name);
             getMembersList(group).add(newMember);
         }
-
     }
 
     // Add multiple members to a group at once using variable arguments

@@ -1,7 +1,8 @@
-package org.example.services;
+package org.example.Mangers;
 
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
+import org.example.services.GroupMemberService;
 
 import java.util.List;
 import java.util.Map;
