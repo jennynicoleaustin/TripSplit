@@ -28,7 +28,6 @@ public class TripGroupService {
         getMembersList(group).add(newMember);
     }
 
-    //    ToDO: Update to take in the phone number as well.
     // Add multiple members to a group at once using variable arguments
     public static void addMembers(TripGroup group, String... nameToAdd) {
         for (String name : nameToAdd) addMember(group, name);

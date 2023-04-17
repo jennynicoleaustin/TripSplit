@@ -19,11 +19,6 @@ public class ExpenseService {
         return expenseMembers;
     }
 
-    public static Expense createExpense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
-        return new Expense(name, members, total, paidBy);
-    }
-
-
     // Add the expense against each member in a list
     public static void addExpenseToAllMembers(List<GroupMember> members, Expense expense) {
         for (GroupMember member : members) member.getExpenses().add(expense);
