@@ -19,6 +19,14 @@ public class ExpenseService {
         return expenseMembers;
     }
 
+    public static Expense createExpense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
+        return new Expense(name, members, total, paidBy);
+    }
+
+    public static void addExpenseToTripGroup (TripGroup group, Expense expense) {
+        List<GroupMember> groupMembersList = TripGroupService.getMembersList(group);
+
+    }
 
     // Add the expense against each member in a list
     public static void addExpenseToAllMembers(List<GroupMember> members, Expense expense) {
@@ -26,30 +34,23 @@ public class ExpenseService {
     }
 
 
-
     // 3. Create a function to add expenses.
     // -> Creates a list of all members to be added to new expense, creates new expense, adds the expense against all members, update all members total owed amount, attaches expense to the TripGroup
     public static Expense addExpense(String name, int total, TripGroup group, String paidByName, String... memberName) {
+//        get expense membersList
         List<GroupMember> members = expenseMemberList(group, memberName);
+//        get paidBy member
         GroupMember paidBy = GroupMemberService.getMemberByName(paidByName, group);
+//        create new expense
         Expense expense = new Expense(name, members, total, paidBy);
+//        add the expense to everyone
         addExpenseToAllMembers(members, expense);
+//        add expense to TripGroup expenses
         group.getExpenseList().add(expense);
+//        Update balance sheet for everyone
         BalanceService.updateBalanceAll(paidBy, expense);
         return expense;
     }
 
 } // ExpenseService Class
 
-//    public static void updateMemberOwedTotal(GroupMember member) {
-//        List<Expense> expenses = member.getExpenses();
-//        int total = 0;
-//        for (Expense expense : expenses) {
-//            total += expense.getSplitAmount();
-//        }
-//        member.setTotalOwed(total);
-//    }
-//
-//    public static void updateAllMemberTotals(List<GroupMember> members) {
-//        for (GroupMember member : members) updateMemberOwedTotal(member);
-//    }

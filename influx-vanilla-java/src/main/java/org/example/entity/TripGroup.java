@@ -10,11 +10,11 @@ public class TripGroup {
     private List<GroupMember> members;
     private List<Expense> expenseList;
 
-    public TripGroup(String groupName) {
+    public TripGroup(String groupName, List<GroupMember> members, List<Expense> expenseList) {
         this.groupName = groupName;
         this.id = UUID.randomUUID();
-        this.members = new ArrayList<>();
-        this.expenseList = new ArrayList<>();
+        this.members = members;
+        this.expenseList = expenseList;
     }
 
     public List<GroupMember> getMembers() {

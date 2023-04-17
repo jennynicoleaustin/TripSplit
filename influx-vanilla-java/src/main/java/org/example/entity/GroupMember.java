@@ -34,14 +34,6 @@ public class GroupMember {
         return expenses;
     }
 
-//    public int getTotalOwed() {
-//        return totalOwed;
-//    }
-//
-//    public void setTotalOwed(int totalOwed) {
-//        this.totalOwed = totalOwed;
-//    }
-
     public UUID getId() {
         return id;
     }

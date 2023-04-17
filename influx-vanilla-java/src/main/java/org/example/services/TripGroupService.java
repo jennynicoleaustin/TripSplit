@@ -1,5 +1,6 @@
 package org.example.services;
 
+import org.example.entity.Expense;
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
 
@@ -9,11 +10,14 @@ import java.util.List;
 public class TripGroupService {
     // 1. Create a function to create a Trip Group.
     public static TripGroup createGroup(String groupName) {
-        TripGroup newGroup = new TripGroup(groupName);
+        List<GroupMember> members = new ArrayList<>();
+        List<Expense> expenseList = new ArrayList<>();
+        TripGroup newGroup = new TripGroup(groupName, members, expenseList);
         System.out.println(newGroup);
         return newGroup;
     }
-//    get TripGroup Member List
+
+    //    get TripGroup Member List
     public static List<GroupMember> getMembersList(TripGroup group) {
         return group.getMembers();
     }
@@ -24,12 +28,11 @@ public class TripGroupService {
         getMembersList(group).add(newMember);
     }
 
-//    ToDO: Update to take in the phone number as well.
+    //    ToDO: Update to take in the phone number as well.
     // Add multiple members to a group at once using variable arguments
     public static void addMembers(TripGroup group, String... nameToAdd) {
         for (String name : nameToAdd) addMember(group, name);
     }
-
 
 
 } // TripGroupService
