@@ -87,7 +87,6 @@ public class TripGroupManager {
         out.println("Enter the name of the member you would like to add to this expense");
         memberToAdd = sc.nextLine();
         ExpenseService.addMemberToExpense(memberToAdd, group, expense);
-
     }
 
 } // TripGroupManager Class

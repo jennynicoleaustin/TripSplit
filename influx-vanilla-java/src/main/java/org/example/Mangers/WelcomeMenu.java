@@ -7,14 +7,13 @@ import java.util.Scanner;
 
 public class WelcomeMenu {
 
-
     public static void printWelcomeMenu (Scanner sc ) {
         System.out.println(
                 "\n" + ManagerUtils.breakPt + "\n" +
                         StringUtils.center("Welcome to TripSplit", 50) + "\n" +
                         ManagerUtils.breakPt + "\n" +
                         "1. Create a Trip Group\n" +
-                        "5. Exit\n" +
+                        "2. Exit\n" +
                         StringUtils.center("Enter an option (1, 2)", 50) + "\n" + ManagerUtils.breakPt +
                         "\n");
         welcomeMenu(sc);
