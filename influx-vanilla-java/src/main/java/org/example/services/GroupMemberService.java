@@ -1,13 +1,19 @@
 package org.example.services;
 
+import org.example.entity.Expense;
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
 
-import java.util.UUID;
+import java.util.*;
 
 
 public class GroupMemberService {
 
+    public static GroupMember createMember(String name) {
+        List<Expense> expenses = new ArrayList<>();
+        Map<UUID, Integer> balanceSheet = new HashMap<>();
+         return new GroupMember(name, expenses, balanceSheet);
+    }
     public static GroupMember getMemberByName(String memberName, TripGroup group) {
         GroupMember member = null;
         for (GroupMember a : TripGroupService.getMembersList(group)) {

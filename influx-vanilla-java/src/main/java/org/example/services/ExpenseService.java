@@ -23,10 +23,6 @@ public class ExpenseService {
         return new Expense(name, members, total, paidBy);
     }
 
-    public static void addExpenseToTripGroup (TripGroup group, Expense expense) {
-        List<GroupMember> groupMembersList = TripGroupService.getMembersList(group);
-
-    }
 
     // Add the expense against each member in a list
     public static void addExpenseToAllMembers(List<GroupMember> members, Expense expense) {

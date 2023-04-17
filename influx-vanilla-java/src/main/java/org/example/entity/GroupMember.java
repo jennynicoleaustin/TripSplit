@@ -7,7 +7,6 @@ public class GroupMember {
     private UUID id;
     private String name;
     private List<Expense> expenses;
-    //    private Integer totalOwed;
     private Map<UUID, Integer> balanceSheet;
 
     public Map<UUID, Integer> getBalanceSheet() {
@@ -15,11 +14,11 @@ public class GroupMember {
     }
 
 
-    public GroupMember(String name) {
+    public GroupMember(String name, List<Expense> expenses, Map<UUID, Integer> balanceSheet) {
         this.name = name;
         this.id = UUID.randomUUID();
-        this.expenses = new ArrayList<>();
-        this.balanceSheet = new HashMap<>();
+        this.expenses = expenses;
+        this.balanceSheet = balanceSheet;
     }
 
     public void setBalanceSheet(Map<UUID, Integer> balanceSheet) {
@@ -46,7 +45,7 @@ public class GroupMember {
     public String toString() {
         return "\n GroupMember { name: " + name +
                 " }";
-//                ",\n totalOwed: " + totalOwed +
+
     }
 
 } // GroupMember class
