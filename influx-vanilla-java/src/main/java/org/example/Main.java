@@ -27,6 +27,8 @@ public class Main {
 
         // calls the split function to show the final output
         SplitManager.printAllBalances(jenny);
+
+        TripGroupService.addMember(jenny, "jenny");
     } // Main Method
 } // Main Class
 

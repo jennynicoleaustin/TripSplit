@@ -33,6 +33,14 @@ public class TripGroup {
         expenseList.add(expense);
     }
 
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     public List<String> memberNamesToString (List<GroupMember> members) {
         List<String> names = new ArrayList<>();
         for (GroupMember member : members) {
