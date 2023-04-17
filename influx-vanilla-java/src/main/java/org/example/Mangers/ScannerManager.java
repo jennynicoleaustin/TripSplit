@@ -123,8 +123,10 @@ public class ScannerManager {
         System.exit(0);
     }
 
-    public static void createMembersList () {
-
+    public static void createMembersList (Scanner sc, TripGroup group) {
+        String memberToAdd;
+        out.println("Enter the name of the member you would like to add to this expense");
+        memberToAdd = sc.nextLine();
     }
 
 } // InputManager Class
