@@ -7,7 +7,7 @@ public class GroupMember {
     private UUID id;
     private String name;
     private List<Expense> expenses;
-//    private Integer totalOwed;
+    //    private Integer totalOwed;
     private Map<UUID, Integer> balanceSheet;
 
     public Map<UUID, Integer> getBalanceSheet() {
@@ -52,8 +52,8 @@ public class GroupMember {
 
     @Override
     public String toString() {
-        return "\n GroupMember { \n name: " + name +
-                ",\n id: " + id + " }";
+        return "\n GroupMember { name: " + name +
+                " }";
 //                ",\n totalOwed: " + totalOwed +
     }
 

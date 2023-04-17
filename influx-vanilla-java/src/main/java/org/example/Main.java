@@ -19,17 +19,13 @@ public class Main {
         System.out.println(jenny);
 
         //  calls the function to add $30 as an expense for each of the members
-//        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
+        Expense expense30 = ExpenseService.addExpense("Coffee", 90, jenny, "Tina", "Jim", "Misty", "Tina");
 
         Expense expense100 = ExpenseService.addExpense("dinosaur", 100, jenny, "Jim", "Jim", "Misty", "Tina", "jenny");
-        System.out.println(expense100 + "\n");
-        System.out.println(jenny.getMembers() + "\n");
 
+        System.out.println(expense30 + "\n" + expense100 + "\n");
 
         // calls the split function to show the final output
-//        System.out.println(expense30);
-
-
         SplitManager.printAllBalances(jenny);
     } // Main Method
 } // Main Class

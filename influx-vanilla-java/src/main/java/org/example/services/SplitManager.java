@@ -12,10 +12,11 @@ public class SplitManager {
 
     public static void printBalanceSheet(GroupMember member, TripGroup group) {
         Map<UUID, Integer> balanceSheet = member.getBalanceSheet();
-        System.out.println(member.getName());
+        String balanceSheetMember = member.getName();
+        System.out.println(balanceSheetMember + "'s Balance Sheet" + "\n--------");
         balanceSheet.forEach((k,v) -> {
             String balanceMemberName = GroupMemberService.getMemberById(k, group).getName();
-            System.out.println(balanceMemberName + " " + v);
+            printBalance(balanceSheetMember, balanceMemberName, v);
         });
         System.out.println("--------\n");
     }
@@ -24,6 +25,14 @@ public class SplitManager {
         List<GroupMember> members = group.getMembers();
         for(GroupMember member : members) {
             printBalanceSheet(member, group);
+        }
+    }
+
+    public static void printBalance (String member1, String member2, Integer amount) {
+        if (amount < 0) {
+            System.out.println(member1 + " owes " + member2 + ": $" + Math.abs(amount));
+        } else if (amount > 0 ) {
+            System.out.println(member2 + " owes " + member1 + ": $" + Math.abs(amount));
         }
     }
 

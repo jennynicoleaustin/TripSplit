@@ -19,37 +19,6 @@ public class ExpenseService {
         return expenseMembers;
     }
 
-//    TODO Create functions for adding balanceSheet information for every user.
-
-    public static void updateBalanceAll(GroupMember payerMember, Expense expense) {
-        List<GroupMember> members = expense.getMembers();
-        Map<UUID, Integer> payerBalances = payerMember.getBalanceSheet();
-        UUID payerId = payerMember.getId();
-        Integer splitAmount = expense.getSplitAmount();
-        for (GroupMember nonPayer : members) {
-            UUID nonPayerId = nonPayer.getId();
-            if (!nonPayerId.equals(payerId)) { // Better to create a filtered list? or the if check?
-                updateBalancePayer(payerBalances, nonPayerId, splitAmount);
-                updateBalanceNonPayer(nonPayer.getBalanceSheet(), payerId, splitAmount);
-            }
-        }
-    }
-
-    public static void updateBalancePayer (Map<UUID, Integer> payerBalanceSheet, UUID nonPayerId, Integer splitAmount) {
-        payerBalanceSheet.putIfAbsent(nonPayerId, 0); // if member is not already on the balance sheet, add & initialize
-        Integer currentAmountOwed = payerBalanceSheet.get(nonPayerId); // get the current balance owed
-        Integer updatedAmountOwed = currentAmountOwed + splitAmount; // add the new expense split amount
-        payerBalanceSheet.put(nonPayerId, updatedAmountOwed); // update the balance sheet with the new amounts
-
-    }
-
-    public static void updateBalanceNonPayer (Map<UUID, Integer> balanceSheet, UUID paidByMemberId, Integer splitAmount) {
-            balanceSheet.putIfAbsent(paidByMemberId, 0); // if member is not already on the balance sheet, add & initialize
-            Integer currentAmountOwed = balanceSheet.get(paidByMemberId); // get the current balance owed
-//        This is the variable argument area....
-            Integer updatedAmountOwed = currentAmountOwed - splitAmount; // add the new expense split amount
-            balanceSheet.put(paidByMemberId, updatedAmountOwed); // update the balance sheet with the new amount
-    }
 
     // Add the expense against each member in a list
     public static void addExpenseToAllMembers(List<GroupMember> members, Expense expense) {
@@ -66,7 +35,7 @@ public class ExpenseService {
         Expense expense = new Expense(name, members, total, paidBy);
         addExpenseToAllMembers(members, expense);
         group.getExpenseList().add(expense);
-        updateBalanceAll(paidBy, expense);
+        BalanceService.updateBalanceAll(paidBy, expense);
         return expense;
     }
 
