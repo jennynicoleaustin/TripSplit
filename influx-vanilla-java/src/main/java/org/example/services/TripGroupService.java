@@ -2,8 +2,6 @@ package org.example.services;
 
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class TripGroupService {

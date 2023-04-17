@@ -5,8 +5,8 @@ import java.util.UUID;
 
 public class TripGroup {
 
-    private String groupName;
     private UUID id;
+    private String groupName;
     private List<GroupMember> members;
     private List<Expense> expenseList;
 
