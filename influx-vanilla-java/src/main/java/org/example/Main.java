@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Mangers.ScannerManager;
+import org.example.Mangers.WelcomeMenu;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ScannerManager.printWelcomeMenu(sc);
+        WelcomeMenu.printWelcomeMenu(sc);
 
 //        // 5. Create a main function to do the following
 //        // Calls the createTripGroup once

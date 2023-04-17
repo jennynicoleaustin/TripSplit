@@ -1,13 +1,19 @@
 package org.example.services;
+
 import org.example.entity.Expense;
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 public class ExpenseService {
+
+    public static void addMemberToExpense(String memberName, TripGroup group, Expense expense) {
+        expense.getMembers().add(GroupMemberService.getMemberByName(memberName, group));
+    }
 
     // Based on TripGroup and a variable number of member names, create a list of members to be added to the expense
     public static List<GroupMember> expenseMemberList(TripGroup group, String... memberName) {
