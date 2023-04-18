@@ -1,21 +1,24 @@
 package org.example.Mangers;
+
 import org.apache.commons.lang3.StringUtils;
 import org.example.entity.Expense;
 import org.example.entity.TripGroup;
 import org.example.services.ExpenseService;
 import org.example.services.GroupMemberService;
 import org.example.services.TripGroupService;
+
 import java.util.Scanner;
 
 import static java.lang.System.out;
 
 public class TripGroupManager {
     private static TripGroup workingTripGroup;
-    public static void printTripGroupMenu (Scanner sc) {
+
+    public static void printTripGroupMenu(Scanner sc) {
         String groupName = workingTripGroup.getGroupName();
         System.out.println(
                 "\n" + ManagerUtils.breakPt + "\n" +
-                        StringUtils.center("Welcome the Trip Group " +groupName , 50) + "\n" +
+                        StringUtils.center("Welcome the Trip Group " + groupName, 50) + "\n" +
                         ManagerUtils.breakPt + "\n" +
                         "1. Add members to " + groupName + "\n" +
                         "2. Add an Expense\n" +
@@ -30,22 +33,14 @@ public class TripGroupManager {
     public static void tripGroupMenu(Scanner sc) {
         int choice = ManagerUtils.getChoice(sc);
         switch (choice) {
-            case 1:
-                TripGroupManager.addMembers(sc);
-                break;
-            case 2:
-                TripGroupManager.addExpense(sc);
-                break;
-            case 3:
-//                showBalance();
-                break;
-            case 4:
-                ManagerUtils.exit();
-                break;
-            default:
-                tripGroupMenu(sc);
+            case 1 -> addMembers(sc);
+            case 2 -> addExpense(sc);
+            case 3 -> showBalance();
+            case 4 -> ManagerUtils.exit();
+            default -> tripGroupMenu(sc);
         }
     }
+
     public static void newTripGroup(Scanner sc) {
         String tripGroupName;
         out.println("Enter the name of your new Trip Group");
@@ -79,14 +74,18 @@ public class TripGroupManager {
         total = sc.nextInt();
         sc.nextLine();
         ExpenseService.createExpense(expenseName, GroupMemberService.getMemberByName(paidByName, workingTripGroup), total);
+
+
         printTripGroupMenu(sc);
     }
 
-    public static void addMemberToExpense (Scanner sc, TripGroup group, Expense expense){
+    public static void addMemberToExpense(Scanner sc, TripGroup group, Expense expense) {
         String memberToAdd;
         out.println("Enter the name of the member you would like to add to this expense");
         memberToAdd = sc.nextLine();
         ExpenseService.addMemberToExpense(memberToAdd, group, expense);
     }
+
+    public static void showBalance() { }
 
 } // TripGroupManager Class

@@ -1,5 +1,4 @@
 package org.example.Mangers;
-
 import org.apache.commons.lang3.StringUtils;
 import org.example.entity.TripGroup;
 
@@ -7,7 +6,7 @@ import java.util.Scanner;
 
 public class WelcomeMenu {
 
-    public static void printWelcomeMenu (Scanner sc ) {
+    public static void printWelcomeMenu (Scanner sc) {
         System.out.println(
                 "\n" + ManagerUtils.breakPt + "\n" +
                         StringUtils.center("Welcome to TripSplit", 50) + "\n" +
@@ -22,12 +21,8 @@ public class WelcomeMenu {
     public static void welcomeMenu(Scanner sc) {
         int choice = ManagerUtils.getChoice(sc);
         switch (choice) {
-            case 1:
-                TripGroupManager.newTripGroup(sc);
-                break;
-            case 2:
-                ManagerUtils.exit();
-                break;
+            case 1 -> TripGroupManager.newTripGroup(sc);
+            case 2 -> ManagerUtils.exit();
         }
     }
 

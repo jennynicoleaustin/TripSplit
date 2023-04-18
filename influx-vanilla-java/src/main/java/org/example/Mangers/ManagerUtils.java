@@ -1,7 +1,5 @@
 package org.example.Mangers;
-
 import org.apache.commons.lang3.StringUtils;
-
 import java.util.Scanner;
 
 public class ManagerUtils {
@@ -17,7 +15,6 @@ public class ManagerUtils {
             return getChoice(sc);
         }
     }
-
 
     public static void exit () {
         System.out.println(breakPt + "\n" + "Thanks for using Trip Split" + "\n" + breakPt);

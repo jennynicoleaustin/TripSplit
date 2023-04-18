@@ -1,5 +1,4 @@
 package org.example.services;
-
 import org.example.entity.Expense;
 import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;

@@ -22,7 +22,7 @@ public class TripGroupService {
     }
 
     //    Check if member with that member name exists already
-    public static boolean memberNameInUse (String name, TripGroup group) {
+    public static boolean memberNameInUse(String name, TripGroup group) {
         if (GroupMemberService.getMemberByName(name, group) != null) {
             System.out.println("Member with that name already exists in Trip Group: " + group.getGroupName());
             return true;
@@ -30,6 +30,7 @@ public class TripGroupService {
             return false;
         }
     }
+
     // 2. Create a function to Add a member to the Trip group
     public static void addMember(TripGroup group, String name) {
         if (!memberNameInUse(name, group)) {
@@ -42,6 +43,5 @@ public class TripGroupService {
     public static void addMembers(TripGroup group, String... nameToAdd) {
         for (String name : nameToAdd) addMember(group, name);
     }
-
 
 } // TripGroupService
