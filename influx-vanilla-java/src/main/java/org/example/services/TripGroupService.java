@@ -44,4 +44,4 @@ public class TripGroupService {
         for (String name : nameToAdd) addMember(group, name);
     }
 
-} // TripGroupService
+} // TripGroupService Class

@@ -4,7 +4,6 @@ import org.example.entity.GroupMember;
 import org.example.entity.TripGroup;
 import java.util.*;
 
-
 public class GroupMemberService {
 
     public static GroupMember createMember(String name) {
@@ -34,4 +33,4 @@ public class GroupMemberService {
         return member;
     }
 
-} // GroupMemberService
+} // GroupMemberService Class

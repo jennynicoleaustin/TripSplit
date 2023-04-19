@@ -26,4 +26,4 @@ public class WelcomeMenu {
         }
     }
 
-} // InputManager Class
+} // WelcomeMenu Class

@@ -1,4 +1,5 @@
 package org.example.entity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -12,8 +13,6 @@ public class Expense {
     private Integer splitAmount;
     private GroupMember paidBy;
 
-
-
     public Expense(String name, List<GroupMember> members, int total, GroupMember paidBy) {
         this.name = name;
         this.id = UUID.randomUUID();
@@ -22,6 +21,7 @@ public class Expense {
         this.total = total;
         this.splitAmount = total / members.size();
     }
+
     public GroupMember getPaidBy() {
         return paidBy;
     }
@@ -29,6 +29,7 @@ public class Expense {
     public void setPaidBy(GroupMember paidBy) {
         this.paidBy = paidBy;
     }
+
     public String getName() {
         return name;
     }
@@ -45,7 +46,7 @@ public class Expense {
         return splitAmount;
     }
 
-    public List<String> memberNamesToString (List<GroupMember> members) {
+    public List<String> memberNamesToString(List<GroupMember> members) {
         List<String> names = new ArrayList<>();
         for (GroupMember member : members) {
             names.add(member.getName());

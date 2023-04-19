@@ -50,7 +50,6 @@ public class TripGroupManager {
         printTripGroupMenu(sc);
     }
 
-
     public static void addMembers(Scanner sc) {
         String memberName;
         out.println("\n" + ManagerUtils.breakPt + "\n" + StringUtils.center("ADD A MEMBER TO " + workingTripGroup.getGroupName(), 50) + "\n" + ManagerUtils.breakPt +

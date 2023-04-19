@@ -13,7 +13,6 @@ public class GroupMember {
         return balanceSheet;
     }
 
-
     public GroupMember(String name, List<Expense> expenses, Map<UUID, Integer> balanceSheet) {
         this.name = name;
         this.id = UUID.randomUUID();
@@ -45,7 +44,6 @@ public class GroupMember {
     public String toString() {
         return "\n GroupMember { name: " + name +
                 " }";
-
     }
 
 } // GroupMember class
